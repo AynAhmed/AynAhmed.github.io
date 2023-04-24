@@ -1,18 +1,39 @@
-let Fname = prompt("What is your first name?");
+//Task 1
 
-// Display a welcome message with name they entered.
-console.log(`Hello ${Fname}, welcome to my webpage!`);
+let count; 
 
-// Create the constant piValue to store the value of Pi to 7 significant digits.
-const piValue = 3.1415926;
+for (let i = 0; i < 11; i++){
+    count = i;
+if (i % 2 === 0) {
+console.log ("Count " + count + " is even");
+} else {
+    console.log("Count " + count + " is odd");
+}
+}
 
-// Ask the user to input their favorite number and store the value in a variable myFavNum.
-let myFavNum = prompt("What is your favorite number?");
 
-// Calculate the area of a circle using the user's favorite number as the radius (r).
-// Store the result in a new variable myArea.
-let myArea = piValue * Math.pow(myFavNum, 2);
+//Task 2
 
-// Display the contents of each variable to the webpage in a message with each variable and text describing the variable.
-console.log(`You entered ${myFavNum} as your favorite number.`);
-console.log(`If that was the radius of a circle, the circle's area would be ${myArea.toFixed(6)}.`);
+let myNum = prompt("Pick a number between 5 and 20");
+if (myNum > 20 || myNum < 5) {
+  console.log("Invalid input");
+} else {
+  let counter = 1;
+  do {
+    console.log(counter);
+    counter++;
+  } while (counter <= myNum);
+}
+
+
+//Task 3
+
+const subjects = ["Accounting", "Algebra", "Programming", "Art", "Data Analytics"];
+
+subjects.forEach(function(subject) {
+    console.log(subject);
+});
+
+console.log(subjects.join(", "));
+
+
