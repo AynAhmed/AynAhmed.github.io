@@ -1,39 +1,55 @@
-//Task 1
+function verifyServiceQuality() {
+	// Get the selected value of the service quality dropdown
+	var serviceQuality = document.getElementById("service-quality").value;
 
-let count; 
-
-for (let i = 0; i < 11; i++){
-    count = i;
-if (i % 2 === 0) {
-console.log ("Count " + count + " is even");
-} else {
-    console.log("Count " + count + " is odd");
-}
-}
-
-
-//Task 2
-
-let myNum = prompt("Pick a number between 5 and 20");
-if (myNum > 20 || myNum < 5) {
-  console.log("Invalid input");
-} else {
-  let counter = 1;
-  do {
-    console.log(counter);
-    counter++;
-  } while (counter <= myNum);
+	// Check if a valid service quality was selected
+	if (serviceQuality === "great" || serviceQuality === "ok" || serviceQuality === "poor") {
+		return true;
+	} else {
+		alert("Please select a valid service quality.");
+		return false;
+	}
 }
 
+function verifyServiceAmount() {
+	// Get the entered value of the service amount field
+	var serviceAmount = parseFloat(document.getElementById("service-amount").value);
 
-//Task 3
+	// Check if a valid service amount was entered
+	if (isNaN(serviceAmount) || serviceAmount < 5 || serviceAmount > 500) {
+		alert("Please enter a valid service amount between $5.00 and $500.00.");
+		return false;
+	} else {
+		return true;
+	}
+}
 
-const subjects = ["Accounting", "Algebra", "Programming", "Art", "Data Analytics"];
+function calculateTip() {
+	// Verify the service quality and amount
+	if (!verifyServiceQuality() || !verifyServiceAmount()) {
+		return;
+	}
 
-subjects.forEach(function(subject) {
-    console.log(subject);
-});
+	// Get the service amount and quality
+	var serviceAmount = parseFloat(document.getElementById("service-amount").value);
+	var serviceQuality = document.getElementById("service-quality").value;
 
-console.log(subjects.join(", "));
+	// Calculate the tip amount
+	var tipPercentage;
+	switch (serviceQuality) {
+		case "great":
+			tipPercentage = 0.2;
+			break;
+		case "ok":
+			tipPercentage = 0.15;
+			break;
+		case "poor":
+			tipPercentage = 0.1;
+			break;
+	}
+	var tipAmount = serviceAmount * tipPercentage;
 
-
+	// Display the tip amount
+	var tipMessage = "For a service amount of $" + serviceAmount.toFixed(2) + " and " + serviceQuality + " service quality, the recommended tip amount is $" + tipAmount.toFixed(2) + ".";
+	document.getElementById("tip-amount").innerHTML = tipMessage;
+}
