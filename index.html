@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Tip Calculator</title>
-	<script src="script.js"></script>
+    <meta charset="UTF-8">
+    <title>Module 05</title>
 </head>
 <body>
-	<h1>Tip Calculator</h1>
-	<p>Enter the service amount and select the quality of service:</p>
-	<form onsubmit="calculateTip(); return false;">
-		<label for="service-amount">Service Amount ($5.00 - $500.00):</label>
-		<input type="number" id="service-amount" min="5" max="500" step="0.01" required><br><br>
-		
-		<label for="service-quality">Service Quality:</label>
-		<select id="service-quality" required>
-			<option value="">Select</option>
-			<option value="great">Great (20%)</option>
-			<option value="ok">OK (15%)</option>
-			<option value="poor">Poor (10%)</option>
-		</select><br><br>
-		
-		<input type="submit" value="Calculate Tip">
-	</form>
+    <p><span id="demo1"></span></p>
+    <p><span id="demo2"></span></p>
 
-	<div id="tip-amount"></div>
+    <script src="script.js"></script>
+    <script>
+        // Displaying the properties of myDog using an object literal
+        var myDog = {
+            name: "Clifford",
+            breed: "Labrador Retriever",
+            tvProgram: "Clifford the Big Red Dog",
+            notes: "Emily's giant dog that constantly gets in trouble",
+            mySound: "when I bark I can be scary"
+        };
+        document.getElementById("demo1").innerHTML = "Name: " + myDog.name + "<br>Breed: " + myDog.breed + "<br>TV Program starred: " + myDog.tvProgram + "<br>Note: " + myDog.notes;
+
+        // Creating an object using the Dog constructor
+        var myDogConst = new Dog("Max", "Italian Greyhound", "The Grinch", false);
+
+        // Calling the myGreeting method and displaying the message
+        myGreeting.call(myDogConst);
+        document.getElementById("demo2").innerHTML = myGreeting();
+    </script>
 </body>
 </html>
