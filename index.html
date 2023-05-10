@@ -1,31 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Module 05</title>
+  <title>Fictional Dogs</title>
 </head>
 <body>
-    <p><span id="demo1"></span></p>
-    <p><span id="demo2"></span></p>
-
     <script src="script.js"></script>
-    <script>
-        // Displaying the properties of myDog using an object literal
-        var myDog = {
-            name: "Clifford",
-            breed: "Labrador Retriever",
-            tvProgram: "Clifford the Big Red Dog",
-            notes: "Emily's giant dog that constantly gets in trouble",
-            mySound: "when I bark I can be scary"
-        };
-        document.getElementById("demo1").innerHTML = "Name: " + myDog.name + "<br>Breed: " + myDog.breed + "<br>TV Program starred: " + myDog.tvProgram + "<br>Note: " + myDog.notes;
-
-        // Creating an object using the Dog constructor
-        var myDogConst = new Dog("Max", "Italian Greyhound", "The Grinch", false);
-
-        // Calling the myGreeting method and displaying the message
-        myGreeting.call(myDogConst);
-        document.getElementById("demo2").innerHTML = myGreeting();
-    </script>
+  <h1>Fictional Dogs</h1>
+  <p id="dogInfo"></p>
 </body>
 </html>

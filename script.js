@@ -1,23 +1,36 @@
+function Dog(name, breed, age, canTalk) {
+      this.name = name;
+      this.breed = breed;
+      this.age = age;
+      this.canTalk = canTalk;
 
-function myGreeting() {
-    console.log(`${this.name} is a ${this.breed} and he stars in a TV show called ${this.famousShow}.`);
-    if (this.canTalk === true) {
-        console.log(`${this.name} can talk!`);
-    } else {
-        console.log(`${this.name} cannot talk.`);
+      this.myGreeting = function() {
+        if (this.canTalk) {
+          return "Hi, I'm " + this.name + "! I can talk!";
+        } else {
+          return "Hi, I'm " + this.name + ". I cannot talk.";
+        }
+      };
     }
-}
 
-function Dog(name, breed, famousShow, canTalk) {
-    this.name = name;
-    this.breed = breed;
-    this.famousShow = famousShow;
-    this.canTalk = canTalk;
-}
+    var dog1 = new Dog("Ace Hart Private Eye Dog", "German Shepherd", 3, true);
+    var dog2 = new Dog("Brian Griffin", "Labrador Retriever", 7, true);
 
-const barney = new Dog("Barney", "Old English Sheepdog", "Barney", true);
-const bingo = new Dog("Bingo", "Pug", "Puppy Dog Pals", false);
+    var selectedDog = prompt("Select a dog by typing its name (Ace Hart Private Eye Dog or Brian Griffin):");
 
-for (const property in bingo) {
-    console.log(`${property}: ${bingo[property]}`);
-}
+    var selectedDogObject;
+    if (selectedDog === dog1.name) {
+      selectedDogObject = dog1;
+    } else if (selectedDog === dog2.name) {
+      selectedDogObject = dog2;
+    }
+
+    if (selectedDogObject) {
+      var dogInfo = "";
+      for (var prop in selectedDogObject) {
+        dogInfo += prop + ": " + selectedDogObject[prop] + "<br>";
+      }
+      document.getElementById("dogInfo").innerHTML = dogInfo;
+    } else {
+      document.getElementById("dogInfo").innerHTML = "Error: The selected dog does not exist.";
+    }
