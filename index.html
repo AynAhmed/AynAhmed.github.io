@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fictional Dogs</title>
+  <title>Warranty and Maintenance Tracking App</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script src="script.js"></script>
-  <h1>Fictional Dogs</h1>
-  <p id="dogInfo"></p>
+  <div class="form-container">
+    <h2>Warranty and Maintenance Tracking App</h2>
+    <!-- Form for user input -->
+    <form action="backend.php" method="POST" id="itemForm">
+      <!-- Item Name field -->
+      <div class="form-group">
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" name="itemName" required>
+        <div id="itemNameError" class="error-message"></div>
+      </div>
+      <!-- Purchase Date field -->
+      <div class="form-group">
+        <label for="purchaseDate">Purchase Date:</label>
+        <input type="date" id="purchaseDate" name="purchaseDate" required>
+        <div id="purchaseDateError" class="error-message"></div>
+      </div>
+      <!-- Warranty Duration field -->
+      <div class="form-group">
+        <label for="warrantyDuration">Warranty Duration (in months):</label>
+        <input type="number" id="warrantyDuration" name="warrantyDuration" required>
+        <div id="warrantyDurationError" class="error-message"></div>
+      </div>
+      <!-- Maintenance Record field -->
+      <div class="form-group">
+        <label for="maintenanceRecord">Maintenance Record:</label>
+        <textarea id="maintenanceRecord" name="maintenanceRecord"></textarea>
+        <div id="maintenanceRecordError" class="error-message"></div>
+      </div>
+      <!-- Submit button -->
+      <button type="submit" class="btn-submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- JavaScript code for form validation -->
+  <script src="script.js"></script>
 </body>
 </html>
